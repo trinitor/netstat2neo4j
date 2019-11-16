@@ -1,0 +1,29 @@
+# show all
+MATCH (hosts)
+RETURN hosts
+
+# return connection from office01 client
+MATCH (src {ip:'192_168_20_100'})-[:DEPENDS_ON]->(dst)
+RETURN src, dst
+
+# return connection to fs2
+MATCH (src)-[:DEPENDS_ON]->(dst {ip: '192_168_10_14'})
+RETURN src, dst
+
+# show nodes from the server range
+MATCH (host)
+WHERE host.ip STARTS WITH '192_168_10_'
+RETURN host
+
+# show only external connections
+MATCH (src)-[:DEPENDS_ON]->(dst)
+WHERE NOT dst.ip STARTS WITH '192_168_'
+RETURN src, dst
+
+# show all telnet connections
+MATCH (src)-[:DEPENDS_ON {port: '23'}]->(dst)
+RETURN src, dst
+
+# delete all nodes and relationships from db
+MATCH (n)
+DETACH DELETE n

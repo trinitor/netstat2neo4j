@@ -1,0 +1,13 @@
+PS C:\> netstat -an
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:5354         0.0.0.0:0              LISTENING
+  TCP    192.168.10.11:139      0.0.0.0:0              LISTENING
+  TCP    192.168.10.11:23452    8.8.8.8:53             ESTABLISHED
+  TCP    [::]:135               [::]:0                 LISTENING
+  TCP    [::]:445               [::]:0                 LISTENING
+  UDP    0.0.0.0:53             *:*
