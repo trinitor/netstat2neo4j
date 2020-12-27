@@ -27,12 +27,12 @@ git clone https://github.com/trinitor/netstat2neo4j.git /opt/netstat2neo4j/
 
 ### Start Container
 ```
-cd /opt/netstat2neo4j/docker
+cd /opt/netstat2neo4j/
 docker-compose up -d
 ```
 
 ### Test Logon
-https://ip:7473  
+https://ip:7474  
 user: neo4j  
 pass: neo4j
 
@@ -46,8 +46,8 @@ bash csv2neo4j.sh
 ```
 the needed cypher statements can be found in create_database.txt
 
-### Create Database
-browse to https://localhost:7473  
+### Create Database 
+browse to https://localhost:7474  
 Copy content from create_database.txt  
 Paste into the command bar of the neo4j interface
 
@@ -64,6 +64,7 @@ There is a query.txt in the example folder as well.
 **Q:** This is redundant. Don't you know there are other projects?  
 **A:** I do. This is not new or special. There are free projects, tutorials and commercial products based on agents to draw maps and even enforce rules.  
 Some examples:  
+- https://www.maltego.com
 - https://www.tanium.com/products/map/
 - https://www.illumio.com/
 - https://www.cisco.com/c/en/us/products/security/tetration/  
@@ -74,7 +75,7 @@ This small project is by no means a replacement.
 **A:** 
 While you can collect the information with WMI/PowerShell remoting I do not recommend to have an account that has full admin rights on all your systems.  
 Use your configuraiton managment to schedule the netstat creation or use schedulded tasks. This is out of scope for this small little project.  
-If you want to use an accout with all the keys to the kindom:  
+If you want to use an account with all the keys to the kindom:  
 https://ijustwannared.team/2019/04/22/network-connection-footprinting-with-wmi-and-neo4j/
 
 **Q:** You must be wrong. Neo4j must be able to read CSV files directly. Why are you creating the statements by yourselve?  

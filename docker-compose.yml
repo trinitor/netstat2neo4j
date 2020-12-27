@@ -1,0 +1,20 @@
+version: '3'
+services:
+  neo4j:
+    container_name: neo4j
+    hostname: neo4j
+    image: 'neo4j'
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_HEAP_MEMORY=4G
+      - NEO4J_CACHE_MEMORY=2G
+    volumes:
+      - './neo4j-data/data:/data'
+      - './neo4j-data/logs:/logs'
+      - './neo4j-data/import:/var/lib/neo4j/import'
+      - './neo4j-data/plugins:/var/lib/neo4j/plugins'
+      - './neo4j-data/conf:/var/lib/neo4j/conf'
+    ports:
+      - '7473:7473'
+      - '7474:7474'
+      - '7687:7687'

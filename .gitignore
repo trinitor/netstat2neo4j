@@ -1,4 +1,5 @@
-script/input/
+neo4j-data/
+script/import/
 script/objects.csv
 script/connections.csv
 script/netstat.csv
